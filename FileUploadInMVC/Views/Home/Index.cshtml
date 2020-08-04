@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model FileUploadInMVC.Models.Employee
+
+<div class="row">
+    <div class="col-md-10">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <br /> <br />
+            @Html.EditorFor(x => x.Name) <br /> <br />
+
+            <input type="file" name="File" />
+            <br />
+            <input type="submit" value="Save" />
+
+        }
+    </div>
+
+    <div>      
+        <a href="/Home/Download">Click to download</a>    
+    </div>
+</div>
